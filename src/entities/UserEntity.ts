@@ -28,6 +28,12 @@ class UserEntity extends BaseEntity {
   @Index()
   username: string;
 
+  @Column({nullable: true})
+  age: number;
+
+  @Column({nullable: true})
+  phone: string;
+
   @Column()
   emailVerified: boolean;
 

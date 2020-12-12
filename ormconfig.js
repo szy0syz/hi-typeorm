@@ -6,7 +6,7 @@ dotenv.config();
 
 // it is safer to name one connection as 'default'.
 // As BaseEntity executes query on connection name 'default'
-console.log('@@process.env.DB_HOST', process.env.DB_HOST);
+
 // when connnection to one database only,
 // name can be ignored and will be assumed as 'default'
 module.exports = {
@@ -18,8 +18,8 @@ module.exports = {
   database: "hi",
   synchronize: false,
   logging: true,
-  entities: ["dist/entities/**/*.js"],
-  migrations: ["dist/migrations/**/*.js"],
+  entities: ["src/entities/**/*.ts"],
+  migrations: ["src/migrations/**/*.ts"],
   cli: {
     migrationsDir: "src/migrations",
   },
