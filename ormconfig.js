@@ -15,7 +15,7 @@ module.exports = {
   port: "5432",
   username: "postgres",
   password: "pass123",
-  database: "hi",
+  database: "hi2",
   synchronize: false,
   logging: true,
   entities: ["src/entities/**/*.ts"],

@@ -1,10 +1,10 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class InitialMigrations1602525591462 implements MigrationInterface {
-    name = 'InitialMigrations1602525591462'
+export class InitialDB1607785109720 implements MigrationInterface {
+    name = 'InitialDB1607785109720'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`CREATE TABLE "user_entity" ("id" SERIAL NOT NULL, "username" character varying NOT NULL, "emailVerified" boolean NOT NULL, "emailVerifiedAt" TIMESTAMP, CONSTRAINT "PK_b54f8ea623b17094db7667d8206" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE TABLE "user_entity" ("id" SERIAL NOT NULL, "username" character varying NOT NULL, "age" integer, "phone" character varying, "emailVerified" boolean NOT NULL, "emailVerifiedAt" TIMESTAMP, CONSTRAINT "PK_b54f8ea623b17094db7667d8206" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE INDEX "IDX_9b998bada7cff93fcb953b0c37" ON "user_entity" ("username") `);
         await queryRunner.query(`CREATE TABLE "product_entity" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, "createdById" integer, CONSTRAINT "PK_6e8f75045ddcd1c389c765c896e" PRIMARY KEY ("id"))`);
         await queryRunner.query(`CREATE TABLE "category_entity" ("id" SERIAL NOT NULL, "name" character varying NOT NULL, CONSTRAINT "PK_1a38b9007ed8afab85026703a53" PRIMARY KEY ("id"))`);
