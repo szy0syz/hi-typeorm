@@ -15,7 +15,32 @@ To execute compiled code, run `npm run start`. Running `index.js` will start an 
 
 ## Lesson 1: Entities
 
-Go through [entities](src/entities) to learn about TypeORM Entity.
+`[entities](src/entities)`
+
+```ts
+class ProductEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  name: string;
+
+  @ManyToOne(() => UserEntity, (user: UserEntity) => user.products)
+  createdBy: UserEntity;
+
+  // 多个
+  // (join 哪个模型, 对应哪个字段)
+  @ManyToMany(
+    () => CategoryEntity,
+    (category: CategoryEntity) => category.products
+  )
+  categories: Array<CategoryEntity>;
+  // 非常有Mongo的schema味道
+  //
+}
+```
+
+> 千万直接用 `.env` 配TypeORM，无比坑多。
 
 ## Lesson 2: Connection
 

@@ -6,17 +6,17 @@ dotenv.config();
 
 // it is safer to name one connection as 'default'.
 // As BaseEntity executes query on connection name 'default'
-
+console.log('@@process.env.DB_HOST', process.env.DB_HOST);
 // when connnection to one database only,
 // name can be ignored and will be assumed as 'default'
 module.exports = {
-  type: process.env.DB_CONNECTION,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE,
-  synchronize: true,
+  type: "postgres",
+  host: "localhost",
+  port: "5432",
+  username: "postgres",
+  password: "pass123",
+  database: "hi",
+  synchronize: false,
   logging: true,
   entities: ["dist/entities/**/*.js"],
   migrations: ["dist/migrations/**/*.js"],
