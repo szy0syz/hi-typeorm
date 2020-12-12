@@ -1,0 +1,8 @@
+# misc
+node_modules
+
+# environment variable
+.env
+
+# finish build
+dist
